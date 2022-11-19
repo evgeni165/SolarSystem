@@ -1,0 +1,466 @@
+body {
+    background: black;
+}
+
+.sun {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 900px;
+    top: 400px;
+    border-radius: 100%;
+    background: #fc3;
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.22, rgb(204,153,0)), color-stop(1, rgb(255,219,112)) );
+    border: none;
+    box-shadow: 0 0 50px 5px #c90;
+    z-index: 100;
+    transition: all 0.2s ease-in;
+    display: flex;
+}
+
+.mercury {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: grey;
+    margin: auto;
+    animation: orbit_mercury 3s linear infinite;
+}
+
+.venus {
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    background: rgb(211,177,132);
+    position: absolute;
+    left: 44%;
+    top: 44%;
+    animation: orbit_venus 9s linear infinite;
+}
+
+.earth {
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    background: rgb(140,174,247);
+    position: absolute;
+    left: 43%;
+    top: 43%;
+    animation: orbit_earth 14s linear infinite;
+}
+
+.eurasia {
+    width: 6px;
+    height: 3px;
+    background: green;
+    left: 6px;
+    top: 2px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 5px 8px 0px 0px;
+}
+
+.america {
+    width: 6px;
+    height: 3px;
+    background: green;
+    left: -1px;
+    top: 6px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 0px 0px 5px 8px;
+}
+
+.mars {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: rgb(195,124,71);
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    animation: orbit_mars 25s linear infinite;
+}
+
+.jupiter {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    /*background: rgb(233,171,104);*/
+    background: 
+        linear-gradient(
+            -25deg,
+            rgb(228,163,96),
+            rgb(123,117,90),
+            rgb(211,187,140),
+            rgb(220,162,131),
+            rgb(228,163,96),
+            rgb(189,203,206),
+            rgb(165,163,153),
+            rgb(228,163,96),
+            rgb(123,117,90),
+            rgb(110,108,85)
+        );
+    position: absolute;
+    left: 37.5%;
+    top: 37.5%;
+    transform: rotate(-25deg);
+    animation: orbit_jupiter 150s linear infinite;
+}
+
+.strip_one {
+    width: 19px;
+    height: 4px;
+    background: rgb(162,110,101);
+    position: absolute;
+    top: 5px;
+    left: -1px;
+    transform: rotate(-25deg);
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0 0 15px 0px rgb(162,110,101);
+}
+
+.strip_two {
+    width: 18.5px;
+    height: 4px;
+    background: rgb(162,110,101);
+    position: absolute;
+    top: 12px;
+    left: 2.5px;
+    transform: rotate(-25deg);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 15px 0px rgb(162,110,101);
+}
+
+.saturn {
+    transform: rotate(-25deg);
+    position: absolute;
+    left: 37.5%;
+    top: 45.5%;
+    animation: orbit_saturn 300s linear infinite;
+}
+
+.saturn::before,
+.saturn::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background:
+        linear-gradient(
+            rgba(212,203,174,1) 0%,
+            rgba(212,203,174,1) 10%,
+            rgba(221,203,157,1) 15%,
+            rgba(221,203,157,1) 17%,
+            rgba(213,181,143,1) 22%,
+            rgba(213,181,143,1) 26%,
+            rgba(208,180,158,1) 32%,
+            rgba(208,180,158,1) 36%,
+            rgba(218,188,162,1) 37%,
+            rgba(218,188,162,1) 39%,
+            rgba(211,184,157,1) 41%,
+            rgba(211,184,157,1) 49%,
+            rgba(205,186,156,1) 51%,
+            rgba(205,186,156,1) 52%,
+            rgba(202,176,153,1) 53%,
+            rgba(202,176,153,1) 65%,
+            rgba(190,177,145,1) 68%,
+            rgba(190,177,145,1) 80%,
+            rgba(150,144,130,1) 91%,
+            rgba(150,144,130,1) 95%,
+            rgba(131,129,117,1) 97%,
+            rgba(131,129,117,1) 100%
+        );
+    border-radius: 100%;
+    left: 37.5%;
+    top: 45.5%;
+    transform: rotate(-25deg);
+}
+
+.rings {
+    width: 30px;
+    height: 5px;
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    background: radial-gradient(
+        transparent 35%,
+        dimgray 40%,
+        slategray 50%,
+        transparent 60%,
+        dimgray 60%,
+        slategray 70%,
+        transparent 70%
+    );
+    transform: rotate(-25deg);
+}
+
+.saturn::before {
+    clip-path: inset(50% 0 0 0);
+}
+ 
+.saturn::after {
+    clip-path: inset(0 0 50% 0);
+}
+
+.uranus {
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background: rgb(74,141,156);
+    position: absolute;
+    left: 41.5%;
+    top: 41.5%;
+    animation: orbit_uranus 900s linear infinite;
+}
+
+.neptune {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: rgb(54,73,200);
+    position: absolute;
+    left: 42.5%;
+    top: 42.5%;
+    animation: orbit_neptune 1800s linear infinite;
+}
+
+@keyframes orbit_mercury {
+    from { 
+        transform: rotate(0deg) translateX(90px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(90px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_venus {
+    from { 
+        transform: rotate(0deg) translateX(130px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(130px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_earth {
+    from { 
+        transform: rotate(0deg) translateX(150px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(150px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_mars {
+    from { 
+        transform: rotate(0deg) translateX(170px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(170px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_jupiter {
+    from { 
+        transform: rotate(0deg) translateX(250px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(250px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_saturn {
+    from { 
+        transform: rotate(0deg) translateX(290px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(290px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_uranus {
+    from { 
+        transform: rotate(0deg) translateX(320px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(320px) rotate(360deg); 
+    }
+}
+
+@keyframes orbit_neptune {
+    from { 
+        transform: rotate(0deg) translateX(350px) rotate(0deg); 
+    }
+    to   { 
+        transform: rotate(-360deg) translateX(350px) rotate(360deg); 
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+.info_sun, .info_mercury, .info_venus, .info_earth,
+.info_mars, .info_jupiter, .info_saturn, .info_uranus, .info_neptune {
+    color: white;
+    opacity: 0.5;
+    font-family: 'Rubik One', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    transition: 1s;
+    text-decoration: none;
+}
+
+.info_sun:hover, .info_mercury:hover, .info_venus:hover, .info_earth:hover,
+.info_mars:hover, .info_jupiter:hover, .info_saturn:hover, .info_uranus:hover, .info_neptune:hover {
+    color: yellow;
+    font-size: 23px;
+    opacity: 1;
+}
+
+.help {
+    color: white;
+    opacity: 0.5;
+    font-family: 'Rubik One', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 100%;
+    border: 5px solid white;
+    cursor: help;
+    transition: 1s;
+}
+
+.help:hover ~ .help_block {
+    opacity: 1;
+    left: 70px;
+}
+
+.help:hover {
+    opacity: 1;
+    color: yellow;
+    border: 5px solid yellow;
+    font-size: 35px;
+}
+
+.help_block {
+    width: 250px;
+    height: 120px;
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 12% 100%, 0% 50%);
+    background: rgb(13,19,44);
+    opacity: 0;
+    position: absolute;
+    left: 200px;
+    top: 270px;
+    transition: 0.3s ease-out;
+    border: 1px solid #1c203c;
+}
+
+.help_block span {
+    color: #767892;
+    font-size: 15px;
+    font-family: 'Rubik One', sans-serif;
+    left: 30px;
+    position: absolute;
+}
+
+.info_mercury:hover ~ .sun .mercury .mark {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-35%, -35%);
+    animation: mig 1s linear infinite;
+}
+
+.info_venus:hover ~ .sun .venus .mark {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-30%, -30%);
+    animation: mig 1s linear infinite;
+}
+
+.info_earth:hover ~ .sun .earth .mark {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-30%, -30%);
+    animation: mig 1s linear infinite;
+}
+
+.info_mars:hover ~ .sun .mars .mark {
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-30%, -30%);
+    animation: mig 1s linear infinite;
+}
+
+.info_jupiter:hover ~ .sun .jupiter .mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-20%, -20%);
+    animation: mig 1s linear infinite;
+}
+
+.info_saturn:hover ~ .sun .saturn .rings .mark {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(0%, -40%);
+    animation: mig 1s linear infinite;
+}
+
+.info_uranus:hover ~ .sun .uranus .mark {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-25%, -25%);
+    animation: mig 1s linear infinite;
+}
+
+.info_neptune:hover ~ .sun .neptune .mark {
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    transform: translate(-25%, -30%);
+    animation: mig 1s linear infinite;
+}
+
+.info_sun:hover ~ .mark {
+    position: absolute;
+    left: 887px;
+    top: 387px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+    animation: mig 1s linear infinite;
+}
+
+@keyframes mig {
+    0% {
+        border: none;
+    }
+    10% {
+        border: 3px solid yellow;
+    }
+    30% {
+        border: 3px solid yellow;
+    }
+    70% {
+        border: 3px solid yellow;
+    }
+    100% {
+        border: none;
+    }
+}
+
+/* End main page */
